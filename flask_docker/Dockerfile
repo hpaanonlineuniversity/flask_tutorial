@@ -1,0 +1,19 @@
+FROM python:3.11
+
+WORKDIR /flask-app
+
+COPY requirements.txt .
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+WORKDIR /flask-app/blueprintapp
+
+RUN flask db init
+RUN flask db migrate
+RUN flask db upgrade
+
+WORKDIR /flask-app
+
+CMD ["python3","run.py"]

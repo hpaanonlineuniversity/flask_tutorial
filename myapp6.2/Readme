@@ -1,0 +1,6 @@
+ 
+ pip install -r requirements.txt
+ flask db migrate
+ flask db upgrate
+ flask db upgrade
+ python run.py

@@ -6,9 +6,9 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__, template_folder='templates')
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./blueprints.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./blueprints.db'
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://mysqluser:password@localhost/mysqldb3'
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://mysqluser:password@localhost/mysqldb3'
 
     db.init_app(app)
 
